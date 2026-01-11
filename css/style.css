@@ -1,15 +1,42 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
+
 body {
   font-family: 'Inter', sans-serif;
 }
 
 
-.scrollbar-hide {
-    scrollbar-width: none; /* Para Firefox */
-    -ms-overflow-style: none; /* Para IE y Edge */
-  }
-  
-.scrollbar-hide::-webkit-scrollbar {
-    display: none; /* Para Chrome, Safari y Opera */
-  }
+:root {
+  --primary-color: #1D4ED8;
+  --primary-glow: rgba(29, 78, 216, 0.15);
+  --surface-hover: rgba(29, 78, 216, 0.04);
+}
+
+
+nav .nav-item {
+  position: relative;
+  border: 1px solid transparent;
+  transition: all 300ms;
+  background: transparent;
+}
+
+
+nav .nav-item:hover {
+
+  background-color: var(--surface-hover);
+  border-color: rgba(29, 78, 216, 0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px -5px var(--primary-glow);
+}
+
+
+nav .nav-item:hover span {
+    color: var(--primary-color);
+}
+
+nav .nav-item:hover img, 
+nav .nav-item:hover svg {
+    transform: scale(1.1); /* Zoom muy sutil al icono */
+    filter: drop-shadow(0 4px 6px rgba(29, 78, 216, 0.3));
+    transition: transform 0.3s ease;
+}
